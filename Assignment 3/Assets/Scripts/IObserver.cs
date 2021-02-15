@@ -1,5 +1,4 @@
-﻿/* Source: Example Code for Game Programming Design Patterns by  Owen Schaffer
- * George Tang
+﻿/* George Tang
  * Assignment 3
  * IObserver.cs
  * ObserverPatternText creates a interface and method for UpdateData
