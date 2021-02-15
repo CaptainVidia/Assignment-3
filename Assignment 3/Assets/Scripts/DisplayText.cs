@@ -1,8 +1,8 @@
-﻿/* Source: Example Code for Game Programming Design Patterns by  Owen Schaffer
- * George Tang
+﻿/*  George Tang
  * Assignment 3
  * DisplayText.cs
- * using Data from the user in textbox to check if answer is correct. Allows the user to play again.
+ * using Data from the user in textbox to check if answer is correct. 
+ * allows the user to play again.
  */
 using System.Collections;
 using System.Collections.Generic;
@@ -13,10 +13,10 @@ using UnityEngine.SceneManagement;
 
 namespace ObserverPatternText
 {
-    //Attach this class to a UI text object to display the text
+    
     public class DisplayText : MonoBehaviour, IObserver
     {
-        //Attach the GameObject holding TextData to this reference in the inspector
+        
         public TextData textData;
         public Text winText;
         public static bool gameOver = false;
@@ -31,7 +31,7 @@ namespace ObserverPatternText
             this.textToDisplay = " ";
             this.textToDisplay = gameObject.GetComponent<Text>().text;
 
-            textData.RegisterObserver(this);
+            textData.RecordObserver(this);
         }
 
         public void UpdateData(string text)
@@ -51,8 +51,6 @@ namespace ObserverPatternText
                 won = true;
                 gameOver = true;
             }
-            
-            
 
             if (gameOver)
             {
@@ -60,10 +58,7 @@ namespace ObserverPatternText
                 {
                     winText.text = "Answer is Correct! Press R to try again";
                 }
-                else
-                {
-                    winText.text = "Answer is incorrect Press R to try again";
-                }
+                
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
